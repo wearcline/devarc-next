@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: #08090d;
+}
+
+body {
+    background: var(--background);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+@layer components {
+    .glass-container {
+        @apply bg-card backdrop-blur-xl border border-white/5 rounded-3xl overflow-hidden shadow-2xl;
+    }
+
+    .glass-container:hover {
+        @apply bg-card-hover border-white/10 transition-all duration-300;
+    }
+
+    .primary-btn {
+        @apply bg-accent text-white px-6 py-3 rounded-2xl font-bold hover:shadow-[0_0_20px_var(--accent-glow)] transition-all duration-300 disabled:opacity-50;
+    }
+
+    .icon-btn {
+        @apply w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 transition-all;
+    }
+
+    .pro-input {
+        @apply w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-accent transition-all placeholder:text-text-secondary;
+    }
+}
